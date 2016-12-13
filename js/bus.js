@@ -64,7 +64,7 @@ $(document).ready(function(){
                     dataType: "jsonp",
                     success: function (data) {
                         if(data.result==null){
-                            address.append("<p>填写内容有错，请核实后再填写！！！</p>");
+                            address_1.append("<p>填写内容有错，请核实后再填写！！！</p>");
                         }
                         var len=data.result[0].length;
                         (function(){
@@ -76,7 +76,7 @@ $(document).ready(function(){
                 }
             )
         }else{
-            address.append("<p>内容不得为空！！！</p>");
+            address_1.append("<p>内容不得为空！！！</p>");
         }
     });
     //转车
@@ -103,7 +103,7 @@ $(document).ready(function(){
                     dataType: "jsonp",
                     success: function (data) {
                         if(data.result==null){
-                            address.append("<p>填写内容有错，请核实后再填写！！！</p>");
+                            address_2.append("<p>填写内容有错，请核实后再填写！！！</p>");
                         }
                         var len=data.result.length;
                         var num=0;
