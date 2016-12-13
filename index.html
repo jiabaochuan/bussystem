@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bus.css">
+    <script src="js/bus.js"></script>
+</head>
+<body>
+        <div id="bus_box"><ul class="nav nav-tabs">
+             <li class="active"><a href="#tab1" data-toggle="tab">城市公交车查询系统</a></li>
+             <li><a href="#tab2" data-toggle="tab">城市公交站台经往车辆查询系统</a></li>
+             <li><a href="#tab3" data-toggle="tab">城市公交线路换乘方案</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                <form role="form" >
+                    <div class="form-group">
+                        <label for="bus_city">城市名称</label>
+                        <input type="text" class="form-control" id="bus_city" placeholder="北京"  >
+                    </div>
+                    <div class="form-group">
+                        <label for="bus_bus">公交名称</label>
+                        <input type="text" class="form-control" id="bus_bus" placeholder="101">
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-default glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal" data-style="slide-down" id="bus_btn">提交</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" id="bus_close_1"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="myModalLabel">汽车站点</h4>
+                            </div>
+                            <div class="modal-body" id="bus_address">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="bus_close_2">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <form role="form" >
+                    <div class="form-group">
+                        <label for="bus_city">城市名称</label>
+                        <input type="text" class="form-control" id="bus_city_station" placeholder="北京"  >
+                    </div>
+                    <div class="form-group">
+                        <label for="bus_bus">公交站台名称</label>
+                        <input type="text" class="form-control" id="bus_station" placeholder="火车站西">
+                    </div>
+                </form>
+                    <button type="submit" class="btn btn-default glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal_1" id="bus_btn_station">提交</button>
+                    <div class="modal fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" id="bus_close_3"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="myModalLabe2">途径公交车</h4>
+                                </div>
+                                <div class="modal-body" id="bus_address_1">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="bus_close_4">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <form role="form" >
+                    <div class="form-group">
+                        <label for="bus_city">城市名称</label>
+                        <input type="text" class="form-control" id="bus_city_change" placeholder="北京"  >
+                    </div>
+                    <div class="form-group">
+                        <label for="bus_bus">途经点坐标集合</label>
+                        <input type="text" class="form-control" id="bus_change" placeholder="116.4604213,39.9204703;116.2883602,39.8236433">
+                    </div>
+                    <div class="form-group">
+                        <label for="bus_bus">选择方案</label>                     <a data-container="body" data-toggle="popover" data-title="友情提示" data-placement="right" data-content="0表示最快捷模式，尽可能乘坐轨道交通和快速公交线路； 2表示最少换乘模式，尽可能减少换乘次数； 3表示最少步行模式，尽可能减少步行距离； 4表示最舒适模式，；乘坐有空调的车线； 5表示纯地铁模式，只选择地铁换乘">提示</a>
+                        <input type="text" class="form-control" id="bus_num" placeholder="2">
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-default glyphicon glyphicon-search" data-toggle="modal" data-target="#myModal_2" id="bus_btn_change">提交</button>
+                <div class="modal fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" id="bus_close_5"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="myModalLabe3">转车方案</h4>
+                            </div>
+                            <div class="modal-body" id="bus_address_2">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="bus_close_6">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+</body>
+</html>
